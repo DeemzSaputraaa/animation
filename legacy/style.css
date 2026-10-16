@@ -1,0 +1,70 @@
+﻿:root { font-family: Inter, system-ui, sans-serif; color: #30494d; background: #e8f2fa; color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; overflow: hidden; }
+#stage { position: fixed; inset: 0 410px 0 0; overflow: hidden; }
+canvas { display: block; max-width: 100%; max-height: 100%; touch-action: none; }
+.intro { position: absolute; top: 34px; left: 38px; pointer-events: none; }
+.eyebrow { display: flex; align-items: center; gap: 9px; color: #64817c; font-size: 10px; font-weight: 700; letter-spacing: 2px; }
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: #60a28b; box-shadow: 0 0 0 4px #60a28b16; }
+h1 { font-size: 28px; margin: 13px 0 7px; font-weight: 500; letter-spacing: -1px; }
+.intro p { color: #758c8b; font-size: 12px; margin: 0; }
+#status { position: absolute; left: calc((100% - 410px) / 2); top: 48%; transform: translate(-50%, -50%); text-align: center; font-size: 13px; color: #55726c; }
+.error, #status.error { color: #a03d32; }
+.hint { position: absolute; bottom: 18px; width: calc(100% - 410px); text-align: center; color: #7b8b88; font-size: 11px; pointer-events: none; }
+.hint span { padding: 0 9px; }
+.narration { position: absolute; right: 26px; top: 50%; transform: translateY(-50%); width: 360px; max-height: calc(100dvh - 48px); overflow-y: auto; padding: 22px; border: 1px solid #dbe4e4; background: #ffffffeb; border-radius: 20px; box-shadow: 0 16px 50px #30494d0c; }
+.panel-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; gap: 10px; }
+.voice-badge { font-size: 10px; background: #eaf3ef; color: #357865; border-radius: 20px; padding: 5px 9px; }
+.panel-section + .panel-section { border-top: 1px solid #e6ebe8; margin-top: 18px; padding-top: 17px; }
+.section-title { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 10px; }
+h3 { display: flex; align-items: center; gap: 8px; font-size: 12px; margin: 0; font-weight: 600; }
+h3 > span { font-size: 9px; color: #357865; background: #eaf3ef; padding: 4px 5px; border-radius: 5px; }
+.focus-button { position: absolute; left: 38px; top: 145px; background: #ffffffdf; }
+.focus-button[aria-pressed="true"] { color: #fff; background: #357865; }
+.vowel-practice { margin-top: 14px; padding: 10px; border-radius: 10px; background: #f3f7f5; }
+.practice-title { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.practice-title strong { font-size: 11px; font-weight: 600; }
+#vowelButton { padding: 6px 8px; font-size: 10px; color: #357865; }
+.vowel-guide { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin-top: 10px; }
+.vowel-guide > div { text-align: center; border: 1px solid #dce7e1; border-radius: 7px; padding: 7px 0; background: white; }
+.vowel-guide b { display: block; font-size: 17px; font-weight: 600; }
+.vowel-guide span { display: block; margin-top: 3px; font-size: 8px; }
+.vowel-guide .active { background: #357865; border-color: #357865; color: white; }
+h2 { font-size: 17px; font-weight: 600; margin: 0; }
+#characterCount { font-size: 10px; color: #7a8c8b; white-space: nowrap; }
+textarea, select, button, input { font: inherit; }
+textarea { width: 100%; min-height: 140px; resize: vertical; max-height: 300px; border: 1px solid #d6e0dc; border-radius: 11px; padding: 13px; background: #f7faf8; color: #334b48; font-size: 13px; line-height: 1.7; }
+.voice-row { margin-top: 15px; }
+label { font-size: 12px; color: #5a726e; }
+select { display: block; width: 100%; margin-top: 7px; padding: 9px; color: #30494d; border: 1px solid #d6e0dc; border-radius: 8px; background: white; font-size: 12px; }
+.muted { color: #7b8e89; font-size: 10px; line-height: 1.5; margin: 7px 0 0; }
+.rate-row { display: flex; gap: 12px; align-items: center; margin-top: 17px; }
+.rate-row input { width: 100%; min-width: 40px; accent-color: #357865; }
+output { font-size: 12px; white-space: nowrap; }
+.buttons { display: flex; gap: 9px; margin-top: 10px; }
+button { border: 1px solid #d6e0dc; border-radius: 9px; padding: 11px 18px; cursor: pointer; color: #425c55; background: white; font-size: 12px; }
+#speakButton { flex: 1; color: white; background: #357865; border-color: #357865; font-weight: 600; }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+button:not(:disabled):hover { filter: brightness(0.94); }
+:focus-visible { outline: 2px solid #357865; outline-offset: 3px; }
+.reading { margin-top: 15px; }
+#speechStatus { font-size: 11px; margin: 0 0 9px; }
+progress { appearance: none; display: block; width: 100%; height: 3px; border: none; background: #e6eeea; border-radius: 4px; accent-color: #357865; }
+progress::-webkit-progress-bar { background: #e6eeea; }
+progress::-webkit-progress-value { background: #357865; }
+#sentenceDisplay { font-size: 12px; line-height: 1.6; color: #526a65; min-height: 38px; max-height: 100px; overflow-y: auto; }
+mark { background: #d9f0dd; color: #215141; border-radius: 3px; }
+.footnote { border-top: 1px solid #e6ebe8; padding-top: 10px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 760px) {
+  #stage { inset: 0 0 360px; }
+  .intro { top: 20px; left: 22px; } h1 { font-size: 23px; margin-top: 9px; } .intro p { font-size: 10px; }
+  .focus-button { left: auto; right: 16px; top: 105px; font-size: 10px; padding: 8px 10px; }
+  .narration { right: 12px; left: 12px; bottom: 12px; top: auto; transform: none; width: auto; max-height: 345px; padding: 16px; border-radius: 16px; }
+  .panel-title { margin-bottom: 9px; } h2 { font-size: 15px; }
+  textarea { min-height: 85px; height: 85px; font-size: 12px; line-height: 1.5; }
+  .voice-row { margin-top: 9px; display: flex; gap: 12px; align-items: center; } select { margin: 0; flex: 1; width: 70%; }
+  #voiceHint { margin-top: 4px; } .rate-row { margin-top: 8px; } .buttons { margin-top: 11px; } button { padding: 10px 14px; }
+  .reading { margin-top: 12px; padding-top: 10px; } #sentenceDisplay { min-height: 0; max-height: 50px; margin: 8px 0; }
+  .hint { display: none; } #status { left: 50%; top: 25%; } .footnote { margin-bottom: 0; }
+}

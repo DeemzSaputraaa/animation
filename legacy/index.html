@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e8f2fa" />
+    <title>Ruang Cerita · Mixamo</title>
+  </head>
+  <body>
+    <main id="stage"></main>
+    <header class="intro">
+      <span class="eyebrow"><span class="live-dot"></span> RUANG CERITA</span>
+      <h1>Cerita Anda, jadi suara.</h1>
+      <p>Tulis naskah. Biarkan karakter membawakannya.</p>
+    </header>
+    <button id="focusButton" class="focus-button" aria-pressed="false">Fokus wajah</button>
+    <p id="status" role="status">Menyiapkan karakter…</p>
+    <section class="narration" aria-labelledby="scriptTitle">
+      <div class="panel-title"><h2 id="scriptTitle">Studio bicara</h2><span class="voice-badge">Ardi · Indonesia</span></div>
+      <section class="panel-section" aria-labelledby="textTitle">
+      <div class="section-title"><h3 id="textTitle"><span>01</span> Naskah</h3><span id="characterCount">0 / 5.000</span></div>
+      <label class="sr-only" for="scriptInput">Teks yang akan dibacakan</label>
+      <textarea id="scriptInput" maxlength="5000" spellcheck="false" aria-describedby="scriptHint">Selamat datang di Ruang Cerita. Mari belajar tentang teknologi informasi.
+
+Pertama, teknologi membantu kita menemukan informasi.
+Kedua, teknologi memudahkan komunikasi.
+Ketiga, gunakan teknologi dengan bijak.
+
+Itulah tiga hal yang perlu kita ingat. Terima kasih!</textarea>
+      <p id="scriptHint" class="muted">Pisahkan gagasan dengan baris baru untuk memberi jeda lebih panjang.</p>
+      </section>
+      <section class="panel-section" aria-labelledby="voiceTitle">
+      <div class="section-title"><h3 id="voiceTitle"><span>02</span> Suara & artikulasi</h3></div>
+      <div class="voice-row"><label for="voiceSelect">Suara</label><select id="voiceSelect" disabled><option>Ardi · Pria Indonesia</option></select></div>
+      <p id="voiceHint" class="muted">Nada asli Ardi. Memerlukan internet; naskah dikirim ke layanan suara Microsoft saat diputar.</p>
+      <div class="rate-row"><label for="rateInput">Kecepatan</label><input id="rateInput" type="range" min="0.6" max="1.3" step="0.05" value="0.95"/><output id="rateValue" for="rateInput">0.95×</output></div>
+      <div class="vowel-practice">
+        <div class="practice-title"><strong>Latihan vokal</strong><button id="vowelButton" disabled>Coba A–I–U–E–O</button></div>
+        <div class="vowel-guide" aria-label="Panduan bentuk mulut">
+          <div data-vowel="a"><b>A</b><span>Terbuka</span></div>
+          <div data-vowel="i"><b>I</b><span>Lebar</span></div>
+          <div data-vowel="u"><b>U</b><span>Mengerucut</span></div>
+          <div data-vowel="e"><b>E</b><span>Setengah</span></div>
+          <div data-vowel="o"><b>O</b><span>Membulat</span></div>
+        </div>
+        <p class="muted">Satu per satu, maksimal 0.80×, dengan jeda antarbunyi.</p>
+      </div>
+      </section>
+      <section class="panel-section" aria-labelledby="playTitle">
+      <div class="section-title"><h3 id="playTitle"><span>03</span> Pemutaran</h3><span id="partCount" class="muted"></span></div>
+      <div class="buttons"><button id="speakButton" disabled>Mulai Bicara</button><button id="stopButton" disabled>Stop</button></div>
+      <div class="reading"><p id="speechStatus" role="status">Siap membaca naskah</p><progress id="speechProgress" max="1" value="0" aria-label="Progres pembacaan"></progress><p id="sentenceDisplay">Kalimat yang sedang dibaca akan muncul di sini.</p></div>
+      </section>
+      <p class="muted footnote">Bentuk bibir mengikuti perkiraan bunyi dan waktu audio. Bunyi E dapat berbeda menurut kata.</p>
+    </section>
+    <p class="hint">Geser karakter untuk memutar <span>·</span> Scroll untuk mendekat</p>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
